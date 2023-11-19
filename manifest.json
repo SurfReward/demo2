@@ -1,0 +1,40 @@
+{
+
+    "manifest_version": 3,
+    "name": "Surf Reward Extension",
+    "version": "1.0",
+
+    "description": "Surf Reward Extension",
+
+    "icons": {
+        "48": "icons/icon.png"
+    },
+
+    "permissions": [
+        "storage"
+    ],
+
+    "action": {
+        "default_title": "Surf Reward Extension",
+        "default_icon": "icons/icon.png",
+        "default_popup": "popup/content.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["jquery.min.js", "main.js"]
+        }
+    ],
+    
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/images/ads/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
